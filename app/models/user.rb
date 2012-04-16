@@ -23,4 +23,21 @@ class User < ActiveRecord::Base
     def generate_salt
       self.salt = self.object_id.to_s + rand.to_s
     end
+
+    def password=(password)
+      @password = password
+
+      if password.present?
+        generate_salt
+        self.hashed_password = self.class.encrypt_password(password, salt)
+      end
+    end
+
+    def User.authenticate(name, password)
+      if user = find_by_name(name)
+        if user.hashed_password == self.class.encrypt_password(password, user.salt)
+          user
+        end
+      end
+    end
 end

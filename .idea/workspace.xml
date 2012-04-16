@@ -2,8 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="df0953a3-0f8e-48c8-a3c5-0a1b0005a7ac" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/config/routes.rb" afterPath="$PROJECT_DIR$/config/routes.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/db/schema.rb" afterPath="$PROJECT_DIR$/db/schema.rb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/models/user.rb" afterPath="$PROJECT_DIR$/app/models/user.rb" />
     </list>
     <ignored path="depot.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -91,7 +90,7 @@
       <file leaf-file-name="user.rb" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/models/user.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="23" column="49" selection-start="613" selection-end="613" vertical-scroll-proportion="0.3725702">
+            <state line="38" column="14" selection-start="997" selection-end="997" vertical-scroll-proportion="0.61555076">
               <folding />
             </state>
           </provider>
@@ -980,7 +979,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/models/user.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="23" column="49" selection-start="613" selection-end="613" vertical-scroll-proportion="0.3725702">
+        <state line="38" column="14" selection-start="997" selection-end="997" vertical-scroll-proportion="0.61555076">
           <folding />
         </state>
       </provider>
