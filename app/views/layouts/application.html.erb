@@ -8,10 +8,30 @@
   <%= csrf_meta_tags %>
 </head>
 <body id="store">
-    <div id="banner">
-      <%= image_tag("logo.png") %>
-      <%= @page_title || "Pragmatic Bookshelf" %>
-    </div>
+    <header class="navbar navbar-fixed-top">
+      <div class="navbar-inner">
+        <div class="container">
+          <%= link_to @page_title || "Pragmatic Bookshelf", '#', :id => "logo" %>
+          <nav>
+            <ul class="nav pull-right">
+              <li><%= link_to "Home",    '#' %></li>
+              <li><%= link_to "Questions",    '#' %></li>
+              <li><%= link_to "News", '#' %></li>
+              <li><%= link_to "Contact", '#' %></li>
+
+              <% if session[:user_id] %>
+                  <li><%=  link_to 'Orders', orders_path %></li>
+                  <li><%=  link_to 'Products', products_path %></li>
+                  <li><%=  link_to 'Users', users_path %></li>
+                  <li><%=  button_to 'Logout', logout_path, :method => :delete %></li>
+              <% end %>
+            </ul>
+          </nav>
+        </div>
+      </div>
+    </header>
+
+
     <div id="columns">
       <div id="side">
         <% if @cart %>
@@ -19,23 +39,8 @@
                 <%= render @cart %>
             <% end %>
         <% end %>
-
-        <a href="http://www...">Home</a><br />
-        <a href="http://www...">Questions</a><br />
-        <a href="http://www...">News</a><br />
-        <a href="http://www...">Contact</a><br />
-
-        <% if session[:user_id] %>
-          <br />
-            <%=  link_to 'Orders', orders_path %><br />
-            <%=  link_to 'Products', products_path %><br />
-            <%=  link_to 'Users', users_path %><br />
-            <br />
-
-            <%=  button_to 'Logout', logout_path, :method => :delete %>
-        <% end %>
       </div>
-      <div id="main">
+      <div class="container" id="main">
         <%= yield %>
       </div>
     </div>
